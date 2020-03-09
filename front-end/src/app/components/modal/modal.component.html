@@ -1,8 +1,8 @@
-<div class="modal-dialog" role="document">
+<div class="modal-dialog" role="document" *ngIf="isOpen">
   <div class="modal-content">
     <div class="modal-header">
       <h5 class="modal-title">{{ title }}</h5>
-      <button type="button" class="close">
+      <button type="button" class="close" (click)="closeModal()">
         <span aria-hidden="true">&times;</span>
       </button>
     </div>
@@ -10,7 +10,7 @@
       <app-profile-edit></app-profile-edit>
     </div>
     <div class="modal-footer">
-      <button type="button" class="btn btn-secondary">
+      <button type="button" class="btn btn-secondary" (click)="closeModal()">
         Close
       </button>
       <button type="submit" class="btn btn-success">Update</button>
