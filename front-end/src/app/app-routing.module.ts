@@ -1,10 +1,10 @@
 import { NgModule } from "@angular/core";
 
 import { Routes, RouterModule } from "@angular/router";
-import { BlogListComponent } from "./blog-list/blog-list.component";
-import { LoginComponent } from "./login/login.component";
-import { RegisterComponent } from "./register/register.component";
-import { ProfileComponent } from "./profile/profile.component";
+import { BlogListComponent } from "./components/blog-list/blog-list.component";
+import { LoginComponent } from "./components/login/login.component";
+import { RegisterComponent } from "./components/register/register.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 const appRoutes: Routes = [
   { path: "", redirectTo: "/blogs", pathMatch: "full" },

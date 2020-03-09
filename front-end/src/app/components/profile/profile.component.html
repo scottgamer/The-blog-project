@@ -12,6 +12,11 @@
     <p>*************</p>
   </div>
   <div class="actions">
-    <button class="btn btn-primary">Update profile</button>
+    <button class="btn btn-primary" (click)="onUpdateProfile()">
+      Update profile
+    </button>
+  </div>
+  <div *ngIf="showModal">
+    <app-modal title="Update profile"></app-modal>
   </div>
 </div>

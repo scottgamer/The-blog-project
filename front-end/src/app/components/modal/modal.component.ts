@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
-import { User } from "src/models/user.model";
+// import { User } from "src/models/user.model";
 
 @Component({
   selector: "app-modal",
@@ -7,10 +7,11 @@ import { User } from "src/models/user.model";
   styleUrls: ["./modal.component.css"]
 })
 export class ModalComponent implements OnInit {
-  @Input() data: User;
+  // @Input() data: User;
+  @Input() title: string;
   constructor() {}
 
   ngOnInit(): void {
-    console.log("modal", this.data);
+    // console.log("modal", this.data);
   }
 }
