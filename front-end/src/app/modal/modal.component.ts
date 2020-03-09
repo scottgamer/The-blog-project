@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { User } from "src/models/user.model";
 
 @Component({
   selector: "app-modal",
@@ -6,8 +7,10 @@ import { Component, OnInit, Input } from "@angular/core";
   styleUrls: ["./modal.component.css"]
 })
 export class ModalComponent implements OnInit {
-  @Input() data: {};
+  @Input() data: User;
   constructor() {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log("modal", this.data);
+  }
 }

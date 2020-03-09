@@ -9,6 +9,7 @@ import { BlogItemComponent } from "./blog-list/blog-item/blog-item.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
 import { ProfileComponent } from './profile/profile.component';
+import { ModalComponent } from './modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProfileComponent } from './profile/profile.component';
     BlogItemComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    ModalComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
