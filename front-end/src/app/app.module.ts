@@ -8,6 +8,7 @@ import { BlogListComponent } from "./blog-list/blog-list.component";
 import { BlogItemComponent } from "./blog-list/blog-item/blog-item.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./register/register.component";
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RegisterComponent } from "./register/register.component";
     BlogListComponent,
     BlogItemComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    ProfileComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
