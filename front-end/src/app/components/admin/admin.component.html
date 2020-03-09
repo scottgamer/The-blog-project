@@ -1,0 +1,40 @@
+<div class="admin">
+  <div class="title">
+    Manage Users
+  </div>
+  <div class="users-list">
+    <div class="user-item">
+      <div class="row">
+        <div class="col-md-8">
+          <h6>Username</h6>
+          username123
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-danger btn-center" (click)="onDisableUser()">
+            Disable
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--  -->
+    <div class="user-item">
+      <div class="row">
+        <div class="col-md-8">
+          <h6>Username</h6>
+          username123
+        </div>
+        <div class="col-md-4">
+          <button class="btn btn-danger btn-center" (click)="onDisableUser()">
+            Disable
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="showModal">
+  <app-modal title="Confirm action" buttonMessage="Disable">
+    <div>Are you sure you want to disable this account?</div>
+  </app-modal>
+</div>
