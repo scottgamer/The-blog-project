@@ -7,13 +7,13 @@
       </button>
     </div>
     <div class="modal-body">
-      <app-profile-edit></app-profile-edit>
+      <ng-content></ng-content>
     </div>
     <div class="modal-footer">
       <button type="button" class="btn btn-secondary" (click)="closeModal()">
         Close
       </button>
-      <button type="submit" class="btn btn-success">Update</button>
+      <button type="submit" class="btn btn-primary">{{ buttonMessage }}</button>
     </div>
   </div>
 </div>

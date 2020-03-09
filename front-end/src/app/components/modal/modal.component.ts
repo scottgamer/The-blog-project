@@ -8,12 +8,12 @@ import { ModalService } from "src/app/services/modal.service";
 })
 export class ModalComponent implements OnInit {
   @Input() title: string;
+  @Input() buttonMessage: string;
   isOpen: boolean;
   constructor(private modalService: ModalService) {}
 
   ngOnInit(): void {
     this.modalService.statusSubject.subscribe(status => (this.isOpen = status));
-    console.log("modal component isOpen", this.isOpen);
   }
 
   closeModal() {
