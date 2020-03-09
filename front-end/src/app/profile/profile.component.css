@@ -1,0 +1,11 @@
+.profile {
+  margin: 2rem;
+  padding: 1rem;
+  border: solid rgb(204, 204, 204);
+  border-width: 1;
+  border-radius: .5rem;
+}
+
+.actions {
+  text-align: center;
+}
