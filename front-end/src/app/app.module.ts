@@ -11,6 +11,7 @@ import { RegisterComponent } from "./components/register/register.component";
 import { ProfileComponent } from "./components/profile/profile.component";
 import { ModalComponent } from "./components/modal/modal.component";
 import { ProfileEditComponent } from "./components/profile/profile-edit/profile-edit.component";
+import { AdminComponent } from "./components/admin/admin.component";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { ProfileEditComponent } from "./components/profile/profile-edit/profile-
     RegisterComponent,
     ProfileComponent,
     ModalComponent,
-    ProfileEditComponent
+    ProfileEditComponent,
+    AdminComponent
   ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
