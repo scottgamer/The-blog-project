@@ -1,5 +1,5 @@
 <div class="login">
-  <form>
+  <form (submit)="onLogin()">
     <div class="form-group">
       <label for="username">Username</label>
       <input type="text" class="form-control" id="username" />
@@ -10,7 +10,7 @@
     </div>
     <div class="actions">
       <button type="submit" class="btn btn-success">Login</button>
-      <hr>
+      <hr />
       <p>
         Don't have an account?<br />
         <a routerLink="/register">Register here!</a>
