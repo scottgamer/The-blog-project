@@ -1,7 +1,13 @@
 import {
   handleCors,
   handleBodyRequestParsing,
-  handleCompression
+  handleCompression,
+  handleHelmet
 } from "./common";
 
-export default [handleCors, handleBodyRequestParsing, handleCompression];
+export default [
+  handleCors,
+  handleBodyRequestParsing,
+  handleCompression,
+  handleHelmet
+];
