@@ -1,3 +1,4 @@
+import * as userValidator from "../validators/userValidator";
 import * as usersController from "../controllers/usersController";
 
 export default [
@@ -9,6 +10,6 @@ export default [
   {
     path: "/users",
     method: "post",
-    handler: [usersController.postUser]
+    handler: [userValidator.validateRegister, usersController.postUser]
   }
 ];
