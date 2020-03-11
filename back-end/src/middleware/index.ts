@@ -2,12 +2,14 @@ import {
   handleCors,
   handleBodyRequestParsing,
   handleCompression,
-  handleHelmet
+  handleHelmet,
+  handleIsAuth
 } from "./common";
 
 export default [
   handleCors,
   handleBodyRequestParsing,
   handleCompression,
-  handleHelmet
+  handleHelmet,
+  handleIsAuth
 ];

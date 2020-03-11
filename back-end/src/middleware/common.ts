@@ -3,9 +3,7 @@ import cors from "cors";
 import parser from "body-parser";
 import compression from "compression";
 import helmet from "helmet";
-import dotenv from "dotenv";
-
-dotenv.config();
+import isAuth from "./auth";
 
 export const handleCors = (router: Router) => router.use(cors({ credentials: true, origin: true }));
 
@@ -20,4 +18,8 @@ export const handleCompression = (router: Router) => {
 
 export const handleHelmet = (router: Router) => {
   router.use(helmet());
+};
+
+export const handleIsAuth = (router: Router) => {
+  router.use(isAuth);
 };
