@@ -18,7 +18,7 @@ export const validateRegister = (req: Request, res: Response, next: NextFunction
   };
 
   const fails = () => {
-    res.status(200).send(transformErrors(validation.errors));
+    res.status(422).send(transformErrors(validation.errors));
   };
 
   validation.checkAsync(passes, fails);
@@ -37,7 +37,7 @@ export const validateLogin = (req: Request, res: Response, next: NextFunction) =
   };
 
   const fails = () => {
-    res.status(200).send(transformErrors(validation.errors));
+    res.status(422).send(transformErrors(validation.errors));
   };
 
   validation.checkAsync(passes, fails);
