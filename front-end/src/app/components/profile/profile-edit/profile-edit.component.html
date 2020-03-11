@@ -1,3 +1,4 @@
+<!-- TODO: change this to match correct user values -->
 <form>
   <div class="form-group">
     <label for="username">Username</label>
@@ -5,12 +6,12 @@
       type="text"
       class="form-control"
       id="username"
-      [value]="user.username"
+      [value]="user.userId"
     />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" [value]="user.email" />
+    <input type="email" class="form-control" id="email" [value]="user.token" />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
@@ -18,7 +19,7 @@
       type="text"
       class="form-control"
       id="password"
-      [value]="user.password"
+      [value]="user.expiration"
     />
   </div>
 </form>

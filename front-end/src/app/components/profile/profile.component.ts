@@ -24,7 +24,7 @@ export class ProfileComponent implements OnInit {
     this.showModal = true;
     this.modalService.setStatus(this.showModal);
 
-    this.user = new User("scottgamer", "richosojason@msn.com", "1234");
+    this.user = new User("12345", "eyj567", 3600);
     this.userService.editUser(this.user);
   }
 }
