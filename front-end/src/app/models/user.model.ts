@@ -1,11 +1,16 @@
-export class User {
-  username: string;
-  email: string;
-  password: string;
+import { ILogin } from "../interfaces/loginInterface";
 
-  constructor(username: string, email: string, password: string) {
-    this.username = username;
-    this.email = email;
-    this.password = password;
+export class User implements ILogin {
+  constructor(
+    public userId: string,
+    public token: string,
+    public expiration: number
+  ) {}
+
+  getToken() {
+    if (!this.expiration || new Date().getTime() > this.expiration) {
+      return null;
+    }
+    return this.token;
   }
 }
