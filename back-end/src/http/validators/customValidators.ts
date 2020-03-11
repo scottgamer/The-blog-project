@@ -22,3 +22,14 @@ Validator.registerAsync(
   },
   "The username is already registered"
 );
+
+Validator.registerAsync(
+  "username_exists",
+  async (username: string, args, req, passes) => {
+    if (!(await userRepository.findByUsername(username))) {
+      passes(false);
+    }
+    passes();
+  },
+  "The username is wrong or does not exist"
+);
