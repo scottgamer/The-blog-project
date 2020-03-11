@@ -8,8 +8,8 @@ export default [
     handler: [usersController.getUsers]
   },
   {
-    path: "/users",
+    path: "/users/signUp",
     method: "post",
-    handler: [userValidator.validateRegister, usersController.postUser]
+    handler: [userValidator.validateRegister, usersController.signUp]
   }
 ];
