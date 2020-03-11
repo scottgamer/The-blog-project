@@ -7,13 +7,13 @@
     {
       "type": "node",
       "request": "launch",
-      "name": "Debug Typescript Node",
+      "name": "Launch Program Typescript",
       "preLaunchTask": "tsc: watch - back-end/tsconfig.json",
       "program": "${workspaceFolder}/back-end/dist/server.js",
       "cwd": "${workspaceFolder}",
       "protocol": "inspector",
       "outFiles": [
-        "${workspaceFolder}/dist/**/*.js"
+        "${workspaceFolder}/back-end/dist/**/*.js"
       ]
     }
   ]

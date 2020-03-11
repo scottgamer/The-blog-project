@@ -8,8 +8,7 @@
       "tsconfig": "back-end/tsconfig.json",
       "problemMatcher": [
         "$tsc"
-      ],
-      "group": "build"
+      ]
     }
   ]
 }
