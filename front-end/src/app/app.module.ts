@@ -14,6 +14,8 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { ModalComponent } from "./components/modal/modal.component";
 import { ProfileEditComponent } from "./components/profile/profile-edit/profile-edit.component";
 import { AdminComponent } from "./components/admin/admin.component";
+import { AlertComponent } from './components/shared/alert/alert.component';
+import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { AdminComponent } from "./components/admin/admin.component";
     ProfileComponent,
     ModalComponent,
     ProfileEditComponent,
-    AdminComponent
+    AdminComponent,
+    AlertComponent,
+    LoadingSpinnerComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
