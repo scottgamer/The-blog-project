@@ -11,5 +11,10 @@ export default [
     path: "/users/signUp",
     method: "post",
     handler: [userValidator.validateRegister, usersController.signUp]
+  },
+  {
+    path: "/users/login",
+    method: "post",
+    handler: [userValidator.validateLogin, usersController.login]
   }
 ];

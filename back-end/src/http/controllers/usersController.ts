@@ -22,3 +22,14 @@ export const signUp = async (req: Request, res: Response, next: NextFunction) =>
     console.log(error);
   }
 };
+
+export const login = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    const user = req.body;
+    const result = await usersService.login(user);
+    res.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error.message);
+  }
+};
