@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { User } from "../../models/user.model";
+import { LoggedUser } from "../../models/loggedUser.model";
 import { UserService } from "src/app/services/user.service";
 import { ModalService } from "src/app/services/modal.service";
 
@@ -11,20 +11,26 @@ import { ModalService } from "src/app/services/modal.service";
 })
 export class ProfileComponent implements OnInit {
   showModal = false;
-  user: User;
+  loggedUser: LoggedUser;
 
   constructor(
     private userService: UserService,
     private modalService: ModalService
   ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.userService.getUser().subscribe(user => {
+      this.loggedUser = new LoggedUser(
+        user.username,
+        user.email,
+        user.password
+      );
+    });
+  }
 
   onUpdateProfile() {
     this.showModal = true;
     this.modalService.setStatus(this.showModal);
-
-    this.user = new User("12345", "eyj567", 3600);
-    this.userService.editUser(this.user);
+    this.userService.editUser(this.loggedUser);
   }
 }
