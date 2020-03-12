@@ -37,6 +37,10 @@ export class LoginComponent implements OnInit {
     );
   }
 
+  onClose() {
+    this.error = null;
+  }
+
   private navigateToProfile() {
     this.router.navigate(["/profile"]);
   }

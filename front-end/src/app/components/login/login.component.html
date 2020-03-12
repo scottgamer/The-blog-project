@@ -1,4 +1,12 @@
 <div class="login">
+  <app-alert
+    [message]="error"
+    *ngIf="error"
+    (closeAlert)="onClose()"
+  ></app-alert>
+  <div *ngIf="isLoading" style="text-align: center;">
+    <app-loading-spinner></app-loading-spinner>
+  </div>
   <form #loginForm="ngForm" (ngSubmit)="onSubmit(loginForm)">
     <div class="form-group">
       <label for="username">Username</label>
