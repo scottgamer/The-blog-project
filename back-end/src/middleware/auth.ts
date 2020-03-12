@@ -18,14 +18,14 @@ export default (req: Request, res: Response, next: NextFunction) => {
       return next();
     }
 
-    const decodedToken = jwt.verify(token, config.jwtSecret) as IUser;
+    const decodedToken: any = jwt.verify(token, config.jwtSecret);
     if (!decodedToken) {
       req.isAuth = false;
       return next();
     }
 
     req.isAuth = true;
-    req.userId = decodedToken._id;
+    req.userId = decodedToken.foundUser._id;
     next();
   } catch (error) {
     console.log(error);
