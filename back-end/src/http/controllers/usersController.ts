@@ -33,3 +33,18 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
     res.status(400).send(error.message);
   }
 };
+
+export const getUser = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    if (!req.isAuth) {
+      throw new Error("Unauthorized");
+    }
+
+    const userId = req.params.id;
+    const result = await usersService.getUser(userId);
+    res.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error.message);
+  }
+};

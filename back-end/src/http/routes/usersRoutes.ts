@@ -16,5 +16,10 @@ export default [
     path: "/users/login",
     method: "post",
     handler: [userValidator.validateLogin, usersController.login]
+  },
+  {
+    path: "/users/:id",
+    method: "get",
+    handler: [usersController.getUser]
   }
 ];

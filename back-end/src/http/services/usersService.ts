@@ -24,3 +24,8 @@ export const login = async (user: IUser) => {
   const token = jwt.sign({ foundUser }, config.jwtSecret, { expiresIn: 3600 });
   return { userId: foundUser.id, token, expiration: 3600 };
 };
+
+export const getUser = async (id: string) => {
+  const user = await usersRepository.findById(id);
+  return user;
+};

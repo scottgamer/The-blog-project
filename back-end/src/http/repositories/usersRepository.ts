@@ -16,6 +16,11 @@ export const findByUsername = async (username: string) => {
   return user;
 };
 
+export const findById = async (_id: string) => {
+  const user = (await User.findOne({ _id })) as IUser;
+  return user._doc;
+};
+
 export const save = async (username: string, email: string, password: string) => {
   const user = new User({ username, email, password });
   const result = await user.save();
