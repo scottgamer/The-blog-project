@@ -1,17 +1,25 @@
-<!-- TODO: change this to match correct user values -->
-<form>
+<form #editProfileForm="ngForm" (ngSubmit)="onSubmit(editProfileForm)">
   <div class="form-group">
     <label for="username">Username</label>
     <input
       type="text"
       class="form-control"
       id="username"
-      [value]="user.userId"
+      name="username"
+      ngModel
+      required
     />
   </div>
   <div class="form-group">
     <label for="email">Email</label>
-    <input type="email" class="form-control" id="email" [value]="user.token" />
+    <input
+      type="email"
+      class="form-control"
+      id="email"
+      name="email"
+      ngModel
+      required
+    />
   </div>
   <div class="form-group">
     <label for="password">Password</label>
@@ -19,7 +27,14 @@
       type="text"
       class="form-control"
       id="password"
-      [value]="user.expiration"
+      name="password"
+      ngModel
+      required
     />
+  </div>
+  <div style="text-align: center;">
+    <button class="btn btn-primary" type="submit">
+      Update
+    </button>
   </div>
 </form>
