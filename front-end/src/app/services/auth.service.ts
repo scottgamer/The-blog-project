@@ -37,14 +37,34 @@ export class AuthService {
       );
   }
 
+  logOut() {
+    localStorage.removeItem("userData");
+    this.user.next(null);
+  }
+
+  autoLogin() {
+    const userData: ILogin = JSON.parse(localStorage.getItem("userData"));
+    if (!userData) {
+      return;
+    }
+
+    const loadedUser = new User(
+      userData.userId,
+      userData.token,
+      new Date().getTime() + userData.expiration
+    );
+
+    if (loadedUser.getToken()) {
+      this.user.next(loadedUser);
+      // TODO: implement auto-logout when time expires
+    }
+  }
+
   private handleAuthentication(data: ILogin) {
     const expirationDate = new Date().getTime() + data.expiration;
     const user = new User(data.userId, data.token, expirationDate);
     this.user.next(user);
 
     localStorage.setItem("userData", JSON.stringify(data));
-
-    // console.log("decoded", decoded);
-    // const user = new User(data.)
   }
 }
