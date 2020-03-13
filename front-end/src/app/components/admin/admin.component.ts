@@ -1,5 +1,4 @@
 import { Component, OnInit } from "@angular/core";
-import { ModalService } from "src/app/services/modal.service";
 
 @Component({
   selector: "app-admin",
@@ -7,13 +6,7 @@ import { ModalService } from "src/app/services/modal.service";
   styleUrls: ["./admin.component.css"]
 })
 export class AdminComponent implements OnInit {
-  showModal = false;
-  constructor(private modalService: ModalService) {}
+  constructor() {}
 
   ngOnInit(): void {}
-
-  onDisableUser() {
-    this.showModal = true;
-    this.modalService.setStatus(this.showModal);
-  }
 }
