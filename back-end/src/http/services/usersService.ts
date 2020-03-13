@@ -54,6 +54,11 @@ export const updateUser = async (id: string, userData: IUser) => {
     throw new Error("The user Id does not exist");
   }
 
+  if (userData.password) {
+    const hashedPassword = await bcrypt.hash(userData.password, 12);
+    userData.password = hashedPassword;
+  }
+
   const updatedUser = await usersRepository.updateOne(user._id, userData);
   return updatedUser;
 };
