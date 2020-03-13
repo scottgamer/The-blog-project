@@ -2,7 +2,6 @@ import { Request, Response, NextFunction } from "express";
 import jwt from "jsonwebtoken";
 
 import config from "../config/config";
-import IUser from "../http/interfaces/userInterface";
 
 export default (req: Request, res: Response, next: NextFunction) => {
   try {
@@ -25,10 +24,9 @@ export default (req: Request, res: Response, next: NextFunction) => {
     }
 
     req.isAuth = true;
-    req.userId = decodedToken.foundUser._id;
+    req.userId = decodedToken.foundUser._iId;
     next();
   } catch (error) {
-    console.log(error);
     req.isAuth = false;
     return next();
   }
