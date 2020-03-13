@@ -1,5 +1,5 @@
 export interface ILogin {
   userId: string;
-  token: string;
-  expiration: number;
+  token?: string;
+  expiration?: number;
 }
