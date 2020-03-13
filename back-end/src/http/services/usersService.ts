@@ -25,7 +25,25 @@ export const login = async (user: IUser) => {
   return { userId: foundUser.id, token, expiration: 3600 };
 };
 
+export const getUsers = async () => {
+  const users = await usersRepository.findAll();
+  const transformerUsers = users.map(user => {
+    const newUser = { _id: user._id, username: user.username, email: user.email };
+    return newUser;
+  });
+  return transformerUsers;
+};
+
 export const getUser = async (id: string) => {
   const user = await usersRepository.findById(id);
   return user;
+};
+
+export const deleteUser = async (id: string) => {
+  const user = await usersRepository.findById(id);
+  if (!user._doc) {
+    throw new Error("The user Id does not exist");
+  }
+  const deletedUser = await usersRepository.deleteById(user._id);
+  return { deleted: deletedUser };
 };

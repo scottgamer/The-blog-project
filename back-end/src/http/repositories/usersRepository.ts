@@ -1,8 +1,8 @@
 import User from "../models/userModel";
 import IUser from "../interfaces/userInterface";
 
-export const find = async () => {
-  const users = await User.find();
+export const findAll = async () => {
+  const users = (await User.find()) as IUser[];
   return users;
 };
 
@@ -25,4 +25,9 @@ export const save = async (username: string, email: string, password: string) =>
   const user = new User({ username, email, password });
   const result = await user.save();
   return result;
+};
+
+export const deleteById = async (_id: string) => {
+  const deletedUser = (await User.deleteOne({ _id })) as IUser;
+  return !!deletedUser;
 };

@@ -21,5 +21,11 @@ export default [
     path: "/users/:id",
     method: "get",
     handler: [usersController.getUser]
+  },
+  {
+    path: "/users/:id",
+    method: "delete",
+    // TOOD: add admin role to control deletion
+    handler: [usersController.deleteUser]
   }
 ];

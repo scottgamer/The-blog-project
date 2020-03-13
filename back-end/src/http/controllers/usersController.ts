@@ -1,12 +1,10 @@
 import { Request, Response, NextFunction } from "express";
 
-// TODO: delete and send to services
-import * as usersRepository from "../repositories/usersRepository";
 import * as usersService from "../services/usersService";
 
 export const getUsers = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    const users = await usersRepository.find();
+    const users = await usersService.getUsers();
     res.status(200).send(users);
   } catch (error) {
     console.log(error);
@@ -36,9 +34,7 @@ export const login = async (req: Request, res: Response, next: NextFunction) => 
 
 export const getUser = async (req: Request, res: Response, next: NextFunction) => {
   try {
-    if (!req.isAuth) {
-      throw new Error("Unauthorized");
-    }
+    checkIsAUth(req.isAuth);
 
     const userId = req.params.id;
     const result = await usersService.getUser(userId);
@@ -46,5 +42,24 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
   } catch (error) {
     console.log(error);
     res.status(400).send(error.message);
+  }
+};
+
+export const deleteUser = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    checkIsAUth(req.isAuth);
+
+    const userId = req.params.id;
+    const result = await usersService.deleteUser(userId);
+    res.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error.message);
+  }
+};
+
+const checkIsAUth = (isAuth: boolean) => {
+  if (!isAuth) {
+    throw new Error("Unauthorized");
   }
 };
