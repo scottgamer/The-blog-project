@@ -4,5 +4,5 @@ export default interface IUser extends Document {
   username: string;
   email: string;
   password: string;
-  _doc: IUser;
+  _doc?: IUser;
 }

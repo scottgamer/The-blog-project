@@ -31,3 +31,8 @@ export const deleteById = async (_id: string) => {
   const deletedUser = (await User.deleteOne({ _id })) as IUser;
   return !!deletedUser;
 };
+
+export const updateOne = async (_id: string, userData: IUser) => {
+  const updatedUser = (await User.findOneAndUpdate({ _id }, userData)) as IUser;
+  return updatedUser;
+};

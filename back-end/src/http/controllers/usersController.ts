@@ -58,6 +58,20 @@ export const deleteUser = async (req: Request, res: Response, next: NextFunction
   }
 };
 
+export const updateUser = async (req: Request, res: Response, next: NextFunction) => {
+  try {
+    checkIsAUth(req.isAuth);
+
+    const userId = req.params.id;
+    const userData = req.body;
+    const result = await usersService.updateUser(userId, userData);
+    res.status(200).send(result);
+  } catch (error) {
+    console.log(error);
+    res.status(400).send(error.message);
+  }
+};
+
 const checkIsAUth = (isAuth: boolean) => {
   if (!isAuth) {
     throw new Error("Unauthorized");

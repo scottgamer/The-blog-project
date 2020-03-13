@@ -41,9 +41,19 @@ export const getUser = async (id: string) => {
 
 export const deleteUser = async (id: string) => {
   const user = await usersRepository.findById(id);
-  if (!user._doc) {
+  if (!user._id) {
     throw new Error("The user Id does not exist");
   }
   const deletedUser = await usersRepository.deleteById(user._id);
   return { deleted: deletedUser };
+};
+
+export const updateUser = async (id: string, userData: IUser) => {
+  const user = await usersRepository.findById(id);
+  if (!user._id) {
+    throw new Error("The user Id does not exist");
+  }
+
+  const updatedUser = await usersRepository.updateOne(user._id, userData);
+  return updatedUser;
 };
