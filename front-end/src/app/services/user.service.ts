@@ -31,6 +31,14 @@ export class UserService {
     return this.httpClient.get<User[]>(`${environment.API_URL}/users`);
   }
 
+  deleteUser(id: string) {
+    const userData: ILogin = JSON.parse(localStorage.getItem("userData"));
+
+    return this.httpClient.delete(`${environment.API_URL}/users/${id}`, {
+      headers: new HttpHeaders({ Authorization: `Bearer ${userData.token}` })
+    });
+  }
+
   editUser(user: LoggedUser) {
     this.loggedUserSubject.next(user);
   }
