@@ -1,4 +1,8 @@
+<div *ngIf="isLoading" style="text-align: center;">
+  <app-loading-spinner></app-loading-spinner>
+</div>
 <div class="users-list">
-  <app-user-item></app-user-item>
-  <app-user-item></app-user-item>
+  <div *ngFor="let user of users">
+    <app-user-item [user]="user"></app-user-item>
+  </div>
 </div>
