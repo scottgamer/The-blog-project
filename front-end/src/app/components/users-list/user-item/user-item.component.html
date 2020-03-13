@@ -6,7 +6,10 @@
     </div>
 
     <div class="col-md-4">
-      <button class="btn btn-danger btn-center" (click)="onDeleteUser()">
+      <button
+        class="btn btn-danger btn-center"
+        (click)="onOpenDeleteUserModal()"
+      >
         Delete
       </button>
     </div>
@@ -15,7 +18,11 @@
     <app-modal title="Confirm action" buttonMessage="Delete">
       <div>
         Are you sure you want to delete this account?
-        <button class="btn btn-danger" style="margin-left: .5rem;">
+        <button
+          class="btn btn-danger"
+          style="margin-left: .5rem;"
+          (click)="onDeleteConfirm(user._id)"
+        >
           Delete
         </button>
       </div>
