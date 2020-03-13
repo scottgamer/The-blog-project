@@ -39,6 +39,17 @@ export class UserService {
     });
   }
 
+  updateUser(data: LoggedUser) {
+    const userData: ILogin = JSON.parse(localStorage.getItem("userData"));
+    return this.httpClient.put(
+      `${environment.API_URL}/users/${userData.userId}`,
+      data,
+      {
+        headers: new HttpHeaders({ Authorization: `Bearer ${userData.token}` })
+      }
+    );
+  }
+
   editUser(user: LoggedUser) {
     this.loggedUserSubject.next(user);
   }
