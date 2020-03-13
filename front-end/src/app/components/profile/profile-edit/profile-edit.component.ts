@@ -9,7 +9,6 @@ import { NgForm } from "@angular/forms";
   styleUrls: ["./profile-edit.component.css"]
 })
 export class ProfileEditComponent implements OnInit {
-  @ViewChild("editProfileForm", { static: false }) editProfileForm: NgForm;
   loggedUser: LoggedUser;
 
   constructor(private userService: UserService) {}
@@ -17,13 +16,6 @@ export class ProfileEditComponent implements OnInit {
   ngOnInit(): void {
     this.userService.loggedUserSubject.subscribe(loggedUser => {
       this.loggedUser = loggedUser;
-
-      console.log("form", this.editProfileForm);
-      this.editProfileForm.setValue({
-        username: this.loggedUser.username,
-        email: this.loggedUser.email,
-        password: this.loggedUser.password
-      });
     });
   }
 
