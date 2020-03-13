@@ -25,5 +25,8 @@ export class ProfileEditComponent implements OnInit {
     }
 
     const values = form.value;
+    this.userService
+      .updateUser(values)
+      .subscribe(response => console.log(response));
   }
 }
