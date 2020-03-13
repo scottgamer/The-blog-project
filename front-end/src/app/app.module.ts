@@ -16,6 +16,8 @@ import { ProfileEditComponent } from "./components/profile/profile-edit/profile-
 import { AdminComponent } from "./components/admin/admin.component";
 import { AlertComponent } from './components/shared/alert/alert.component';
 import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loading-spinner.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
+import { UserItemComponent } from './components/users-list/user-item/user-item.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { LoadingSpinnerComponent } from './components/shared/loading-spinner/loa
     ProfileEditComponent,
     AdminComponent,
     AlertComponent,
-    LoadingSpinnerComponent
+    LoadingSpinnerComponent,
+    UsersListComponent,
+    UserItemComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
