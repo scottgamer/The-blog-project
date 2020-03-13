@@ -27,6 +27,10 @@ export class UserService {
     );
   }
 
+  getAllUsers() {
+    return this.httpClient.get<LoggedUser>(`${environment.API_URL}/users`);
+  }
+
   editUser(user: LoggedUser) {
     this.loggedUserSubject.next(user);
   }
