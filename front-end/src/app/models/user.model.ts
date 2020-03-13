@@ -3,8 +3,9 @@ import { ILogin } from "../interfaces/loginInterface";
 export class User implements ILogin {
   constructor(
     public userId: string,
-    public token: string,
-    public expiration: number
+    public token?: string,
+    public expiration?: number,
+    public username?: string
   ) {}
 
   getToken() {
