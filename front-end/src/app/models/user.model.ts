@@ -5,7 +5,7 @@ export class User implements ILogin {
     public userId: string,
     public token?: string,
     public expiration?: number,
-    public username?: string
+    public username?: string,
   ) {}
 
   getToken() {
